@@ -1,57 +1,46 @@
 import { HashRouter as Router, Route} from 'react-router-dom'
 
-import Home from "../Home/Home";
-import FeelingsPage from "../FeelingsPage/feelingsPage"
-
-import React, { useEffect } from 'react';
-// import axios from 'axios';
 import './App.css';
-import { useDispatch } from 'react-redux';
+
+import Header from '../Header/Header';
+// import Home from "../Home/Home";
+import Feelings from "../Feelings/feelings";
+import Understanding from "../Understanding/Understanding";
+import Support from "../Support/Support";
+import Comments from "../Comments/Comments";
+import Results from '../Results/Results';
+
 
 function App() {
-
-  useEffect(() => {
-    fetchFeelings();
-  }, []);
-
-  function fetchFeelings() {
-    console.log('GET feelings')
-  }
-
-  const dispatch = useDispatch();
 
   return (
     <div className='App'>
 
-      <header className='App-header'>
-        <h1 className='App-title'>Feedback!</h1> 
-        <h4>Don't forget about it!</h4>
-      </header>
-
-    <nav>
     <Router>
+      <Header />
+      <br />
       <div>
-        <Route>
-          <Home />
+        {/* <Route>
+          <Home exact path="/" />
+        </Route> */}
+        <Route exact path="/">
+          <Feelings />
         </Route>
-        <Route exact path="/feelingsPage">
-          <FeelingsPage />
+        <Route exact path="/understanding">
+          <Understanding />
         </Route>
-        {/* <Route exact path="/understandingPage">
-          <UnderstandingPage />
+        <Route exact path="/support">
+          <Support />
         </Route>
-        <Route exact path="/supportedPage">
-          <SupportedPage />
-        </Route>
-        <Route exact path="/CommentsPage">
-           <CommentsPage />
+        <Route exact path="/comments">
+           <Comments />
         </Route>
         <Route exact path ="results">
           <Results />
-        </Route> */}
+        </Route>
       </div>
     </Router>
-    </nav>
+    
     </div>
   );
 }
