@@ -6,34 +6,10 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import registerServiceWorker from './registerServiceWorker';
 
-// // introducing: redux-saga:
-// import createMiddleWareSaga from "redux-saga";
-// // End redux-saga.
-
-// // middleware:
-// const sagaMiddleware = createSagaMiddleware();
-// // End middleware.
-
-// // saga actions - watching:
-// function* watcherSaga() {}
-// // End saga actions.
-
-// // importing middleware
-
 import logger from 'redux-logger';
-// import createSagaMiddleware from "@redux-saga/core";
 
-// const home = (state = [], action) => {
-// 	// console.log('inside feelings reducer!!!!!!!', state);
-// 	// if (action.type === 'FEELINGS_PAGE') {
-// 	// 	console.log(action.payload);
-// 	// 	return action.payload;
-// 	// }
-// 	return state;
-// };
-
+// store feelings
 const feelings = (state = '', action) => {
-	// console.log('logging state', state);
 	if (action.type === 'SET_FEELINGS') {
 		console.log(action.payload);
 		return action.payload;
@@ -41,32 +17,32 @@ const feelings = (state = '', action) => {
 	return state;
 };
 
-// const understanding = (state = [], action) => {
-// console.log('inside feelings reducer!!!!!!!', state);
-// if (action.type === 'FEELINGS_PAGE') {
-// 	console.log(action.payload);
-// 	return action.payload;
-// }
-// return state;
-// };
+// store understanding
+const understanding = (state = [], action) => {
+	if (action.type === 'SET_UNDERSTANDING') {
+		console.log(action.payload);
+		return action.payload;
+	}
+	return state;
+};
 
-// const support = (state = [], action) => {
-// console.log('inside feelings reducer!!!!!!!', state);
-// if (action.type === 'FEELINGS_PAGE') {
-// 	console.log(action.payload);
-// 	return action.payload;
-// }
-// return state;
-// };
+// store support
+const support = (state = [], action) => {
+	if (action.type === 'SET_SUPPORT') {
+		console.log(action.payload);
+		return action.payload;
+	}
+	return state;
+};
 
-// const comments = (state = [], action) => {
-// console.log('inside feelings reducer!!!!!!!', state);
-// if (action.type === 'FEELINGS_PAGE') {
-// 	console.log(action.payload);
-// 	return action.payload;
-// }
-// return state;
-// };
+// store comments
+const comments = (state = [], action) => {
+	if (action.type === 'SET_COMMENTS') {
+		console.log(action.payload);
+		return action.payload;
+	}
+	return state;
+};
 
 // const results = (state = [], action) => {
 // 	return state;
@@ -74,12 +50,10 @@ const feelings = (state = '', action) => {
 
 const store = createStore(
 	combineReducers({
-		// home,
 		feelings,
-		// understanding,
-		// support,
-		// comments,
-		// results,
+		understanding,
+		support,
+		comments,
 	}),
 	applyMiddleware(logger)
 );
