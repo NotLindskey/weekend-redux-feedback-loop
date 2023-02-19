@@ -35,7 +35,7 @@ function App() {
         <Route exact path="/comments">
            <Comments />
         </Route>
-        <Route exact path ="results">
+        <Route exact path ="/results">
           <Results />
         </Route>
       </div>
