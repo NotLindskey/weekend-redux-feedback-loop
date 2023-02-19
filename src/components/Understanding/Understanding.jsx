@@ -4,7 +4,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-const Understanding = () => {
+const understanding = () => {
     const history = useHistory();
 
     const understanding = useSelector(store => store.understanding);
@@ -18,7 +18,7 @@ const Understanding = () => {
     <div>
     <h1>Understanding</h1>
     <p>How well are you understanding the content?</p>
-    <input value={understanding} onChange={handleChange} type="number" min={0} max={5}/>
+    <input value={understanding} onChange={handleChange} type="text"/>
     <button onClick={() => history.push('/support')}>next</button>
     {/* <div>
         <input value={understanding} onChange={handleChange} className="input" type="text" />
@@ -28,4 +28,4 @@ const Understanding = () => {
     )
 }
 
-export default Understanding;
+export default understanding;

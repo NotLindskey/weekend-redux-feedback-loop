@@ -1,24 +1,24 @@
 // import 
-// import React from 'react'
+import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-const Feelings = () => {
+const feelings = () => {
     const history = useHistory();
 
     const feelings = useSelector(store => store.feelings);
-    const dispatch = useDispatch;
+    const dispatch = useDispatch();
     
-    const handleChange = () => {
+    const handleChange = (event) => {
         dispatch({type: 'SET_FEELINGS', payload: event.target.value});
     }
 
     return (
     <div>
-    <h1>feelings</h1>
+    <h1>Feelings</h1>
     <p>How are you feeling today?</p>
-    <input value={feelings} onChange={handleChange} type="number" min={0} max={5}/>
+    <input value={feelings} onChange={handleChange} type="text"/>
     <button onClick={() => history.push('/understanding')}>next</button>
     {/* <div>
         <input value={feelings} onChange={handleChange} className="input" type="text" />
@@ -28,4 +28,4 @@ const Feelings = () => {
     )
 }
 
-export default Feelings;
+export default feelings;

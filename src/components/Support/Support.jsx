@@ -3,21 +3,21 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-const understanding = () => {
+const support = () => {
     const history = useHistory();
 
-    const understanding = useSelector(store => store.understanding);
+    const support = useSelector(store => store.support);
     const dispatch = useDispatch();
     
     const handleChange = () => {
-        dispatch({type: 'SET_UNDERSTANDING', payload: event.target.value});
+        dispatch({type: 'SET_SUPPORT', payload: event.target.value});
     }
 
     return (
     <div>
     <h1>Support</h1>
     <p>How well are you being supported?</p>
-    <input value={understanding} onChange={handleChange} type="number" min={0} max={5}/>
+    <input value={support} onChange={handleChange} type="text"/>
     <button onClick={() => history.push('/comments')}>next</button>
     {/* <div>
         <input value={understanding} onChange={handleChange} className="input" type="text" />
@@ -27,4 +27,4 @@ const understanding = () => {
     )
 }
 
-export default understanding;
+export default support;
