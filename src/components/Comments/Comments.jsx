@@ -7,7 +7,7 @@ const comments = () => {
     const history = useHistory();
 
     const comments = useSelector(store => store.comments);
-    const dispatch = useDispatch;
+    const dispatch = useDispatch();
     
     const handleChange = () => {
         dispatch({type: 'SET_COMMENTS', payload: event.target.value});
@@ -15,8 +15,8 @@ const comments = () => {
 
     return (
     <div>
-    <h1>comments</h1>
-    <p>How are you feeling today?</p>
+    <h1>Comments</h1>
+    <p>Any comments you want to leave?</p>
     <input value={comments} onChange={handleChange} type="text"/>
     <button onClick={() => history.push('/results')}>next</button>
     {/* <div>

@@ -7,7 +7,7 @@ const understanding = () => {
     const history = useHistory();
 
     const understanding = useSelector(store => store.understanding);
-    const dispatch = useDispatch;
+    const dispatch = useDispatch();
     
     const handleChange = () => {
         dispatch({type: 'SET_UNDERSTANDING', payload: event.target.value});
@@ -15,8 +15,8 @@ const understanding = () => {
 
     return (
     <div>
-    <h1>understanding</h1>
-    <p>How are you feeling today?</p>
+    <h1>Support</h1>
+    <p>How well are you being supported?</p>
     <input value={understanding} onChange={handleChange} type="number" min={0} max={5}/>
     <button onClick={() => history.push('/comments')}>next</button>
     {/* <div>
