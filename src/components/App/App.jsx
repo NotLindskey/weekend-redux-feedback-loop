@@ -20,7 +20,7 @@ function App() {
       <Header />
       <br />
       <div>
-        <Route path="/">
+        <Route exact path="/">
           <Home  />
         </Route>
         <Route exact path="/feelings">
