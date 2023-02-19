@@ -1,6 +1,9 @@
 import React from 'react' 
 
+import { useHistory } from 'react-router-dom';
+
 function home() {
+    const history = useHistory();
 
     return(
         <div>
