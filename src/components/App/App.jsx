@@ -2,8 +2,8 @@ import { HashRouter as Router, Route} from 'react-router-dom'
 
 import './App.css';
 
+import Home from '../Home/Home'
 import Header from '../Header/Header';
-// import Home from "../Home/Home";
 import Feelings from "../Feelings/feelings";
 import Understanding from "../Understanding/Understanding";
 import Support from "../Support/Support";
@@ -20,10 +20,10 @@ function App() {
       <Header />
       <br />
       <div>
-        {/* <Route>
-          <Home exact path="/" />
-        </Route> */}
-        <Route exact path="/">
+        <Route path="/">
+          <Home  />
+        </Route>
+        <Route exact path="/feelings">
           <Feelings />
         </Route>
         <Route exact path="/understanding">
@@ -47,16 +47,3 @@ function App() {
 
 export default App;
 
-// [] look into nav bar
-
-// [] Home - Need to get starter page.
- 
-// [] components - pages //
-// [] FeelingsPage - need a value
-// [] UnderstandingPage - need a value
-// [] SupportedPage - need a value
-// [] Comments - can remain 
-
-// [] admin page  
-
-// [] results - need to gather all data from components. 
