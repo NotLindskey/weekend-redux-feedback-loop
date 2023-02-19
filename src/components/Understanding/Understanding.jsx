@@ -1,30 +1,24 @@
-// import 
-// import React from 'react'
-
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 const understanding = () => {
-    const history = useHistory();
-
     const understanding = useSelector(store => store.understanding);
     const dispatch = useDispatch();
+    const history = useHistory();
     
     const handleChange = () => {
         dispatch({type: 'SET_UNDERSTANDING', payload: event.target.value});
     }
 
     return (
-    <div>
-    <h1>Understanding</h1>
-    <p>How well are you understanding the content?</p>
-    <input value={understanding} onChange={handleChange} type="text"/>
-    <button onClick={() => history.push('/support')}>next</button>
-    {/* <div>
-        <input value={understanding} onChange={handleChange} className="input" type="text" />
-        <button onClick={() => history.push('/understandingPage')} className="button">Next</button>
-    </div> */}
-    </div>
+        <div>
+            <h1>Understanding</h1>
+            <p>How well are you understanding the content?</p>
+    
+            <input value={understanding} onChange={handleChange} type="text"/>
+            <button onClick={() => history.push('/support')}>next</button>
+        </div>
     )
 }
 
