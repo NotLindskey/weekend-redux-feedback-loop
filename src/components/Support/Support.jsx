@@ -7,6 +7,7 @@ const support = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     
+    // record support input
     const handleChange = () => {
         dispatch({type: 'SET_SUPPORT', payload: event.target.value});
     }
@@ -17,6 +18,8 @@ const support = () => {
              <p>How well are you being supported?</p>
             
             <input value={support} onChange={handleChange} type="text"/>
+
+            {/* send to comments? */}
             <button onClick={() => history.push('/comments')}>next</button>
         </div>
     )

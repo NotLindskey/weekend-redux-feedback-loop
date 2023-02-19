@@ -7,6 +7,7 @@ const feelings = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     
+    // record feelings input
     const handleChange = (event) => {
         dispatch({type: 'SET_FEELINGS', payload: event.target.value});
     }
@@ -17,6 +18,8 @@ const feelings = () => {
             <p>How are you feeling today?</p>
 
             <input value={feelings} onChange={handleChange} type="text"/>
+
+            {/* send to understanding question */}
             <button onClick={() => history.push('/understanding')}>next</button>
         </div>
     )

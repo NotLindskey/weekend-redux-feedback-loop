@@ -7,6 +7,7 @@ const understanding = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     
+    // record understanding input
     const handleChange = () => {
         dispatch({type: 'SET_UNDERSTANDING', payload: event.target.value});
     }
@@ -17,6 +18,8 @@ const understanding = () => {
             <p>How well are you understanding the content?</p>
     
             <input value={understanding} onChange={handleChange} type="text"/>
+
+            {/* send to support question */}
             <button onClick={() => history.push('/support')}>next</button>
         </div>
     )
